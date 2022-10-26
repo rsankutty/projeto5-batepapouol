@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+body{
+  display: flex;
+  justify-content: center;
+}
+.chat-body{
+  width: 375px;
+  height: 667px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: gray;
+}
+
+header{
+  background-color: yellow;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img{
+  margin-left: 22px;
+}
+
+ion-icon[name="people"]{
+  font-size: 42.2px;
+  margin-right: 22.5px;
+}
+
+type-field{
+  height: 80px;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input[type=text] {
+  width: 100%;
+  margin: 0px 10px 0px 17px;
+  border: 0;
+}
+
+ion-icon[name="paper-plane-outline"]{
+  font-size: 27px;
+  margin-right: 18px;
+}
