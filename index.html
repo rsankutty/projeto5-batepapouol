@@ -14,9 +14,26 @@
       <img src="images/logo 1.svg" alt="" width="75px">
       <ion-icon name="people"></ion-icon>
     </header>
+    <div class="messages">
+      <div class="message-inout">
+        (09:21:45)  <strong>João</strong> entra na sala...
+      </div>
+      <div class="message-box">
+        <span class="time">(09:22:28)</span>  <strong>João</strong> para <strong>Todos</strong>:  Bom dia
+      </div>
+      <div class="message-box">
+        <span class="time">(09:22:38)</span>  <strong>Maria</strong> para <strong>João</strong>:  Oi João :)
+      </div>
+      <div class="message-secret">
+        <span class="time">(09:22:48)</span>  <strong>João</strong> reservadamente para <strong>Maria</strong>:  Oi gatinha quer tc?
+      </div>
+      <div class="message-inout">
+        <span class="time">(09:22:58)</span>  <strong>Maria</strong> sai da sala...
+      </div>
+    </div>
     <type-field>
-      <input type="text" placeholder="Escreva aqui...">
-      <ion-icon name="paper-plane-outline"></ion-icon>
+      <input type="text" id="message" placeholder="Escreva aqui..." onkeypress='enterEvent(event)' >
+      <ion-icon name="paper-plane-outline" onclick="sendClick()"></ion-icon>
     </type-field>
   </div>
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
