@@ -1,12 +1,21 @@
-let nome = prompt("Seu lindo nome");
+let nome;
+let objeto;
 
-objeto = {
-  name: nome
+function pedirNome(){
+  nome = prompt("Seu lindo nome");
+  objeto = {
+    name: nome
+  }
 }
 
-const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants ', objeto);
-requisicao.then(tratarSucesso);
-requisicao.catch(tratarError);
+pedirNome()
+usuarioEntrou()
+
+function usuarioEntrou(){
+  const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants ', objeto);
+  requisicao.then(tratarSucesso);
+  requisicao.catch(tratarError);
+}
 
 function conectado(){
   const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', objeto);
@@ -20,8 +29,21 @@ function tratarSucesso(){
 setInterval(conectado, 5000);
 setInterval(getPromise, 3000);
 
-function tratarError(){
-  alert("deu ruim");
+function tratarError(erro){
+  alert("Este nome já está em uso, por favor insira um diferente");
+  let error_status = erro.response.status;
+  if (error_status !=200){
+    pedirNome();
+    usuarioEntrou();
+  }
+}
+
+function tratarError2(erro){
+  alert("Este nome já está em uso, por favor insira um diferente");
+  let error_status = erro.response.status;
+  if (error_status !=200){
+    window.location.reload();
+  }
 }
 
 function enterEvent(event) {
@@ -42,7 +64,7 @@ function enviarMensagem(){
   }
   const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', mensagem_usuario);
   requisicao.then(tratarSucesso);
-  requisicao.catch(tratarError);
+  requisicao.catch(tratarError2);
 }
 
 function clearInput(){
