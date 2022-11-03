@@ -32,8 +32,8 @@
       </div> -->
     </div>
     <type-field>
-      <input type="text" id="message" placeholder="Escreva aqui..." onkeypress='enterEvent(event)' >
-      <ion-icon name="paper-plane-outline" onclick="enviarMensagem(),sendClick()"></ion-icon>
+      <input type="text" id="message" placeholder="Escreva aqui..." onkeypress='enterEvent(event)' data-test="input-message" >
+      <ion-icon name="paper-plane-outline" onclick="enviarMensagem(),sendClick()" data-test="send-message" ></ion-icon>
     </type-field>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

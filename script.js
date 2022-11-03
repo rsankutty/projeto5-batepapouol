@@ -110,12 +110,12 @@ function renderizarMensagem(from,to,text,type,time){
     </div>`;
   } else if (type == "private_message" && nome == to) {
     elemento = `
-    <div class="message-secret">
+    <div class="message-secret" data-test="message">
     <span class="time">(${time}})</span> <strong>${from}</strong> reservadamente para <strong>${to}</strong>: ${text}
     </div>`;
   } else {
     elemento = `
-    <div class="message-box">
+    <div class="message-box" data-test="message">
       <span class="time">(${time}})</span> <strong>${from}</strong> para <strong>${to}</strong>: ${text}
     </div>`;
   }
