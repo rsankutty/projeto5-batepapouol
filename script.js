@@ -78,17 +78,17 @@ function processarResposta(resposta) {
 function renderizarMensagem(from,to,text,type,time){
   if (type == "status") {
     elemento = `
-    <div class="message-inout">
+    <div class="message-inout" data-test="message">
     <span class="time">(${time}})</span> <strong>${from}</strong> ${text}
     </div>`;
   } else if (type == "message") {
     elemento = `
-    <div class="message-box">
+    <div class="message-box" data-test="message">
       <span class="time">(${time}})</span> <strong>${from}</strong> para <strong>${to}</strong>: ${text}
     </div>`;
   } else {
     elemento = `
-    <div class="message-secret">
+    <div class="message-secret" data-test="message">
     <span class="time">(${time}})</span> <strong>${from}</strong> reservadamente para <strong>${to}</strong>: ${text}
     </div>`;
   }
